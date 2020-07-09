@@ -1,26 +1,29 @@
 #pragma once
 #include <iostream>
+#include <locale.h>
 using namespace std;
+
+setlocale(LC_ALL, "rus");
 
 class Poly
 {
-	friend ostream &operator<<(ostream &, const Poly &);	//перегрузка оператора вывода
+	friend ostream &operator<<(ostream &, const Poly &);	//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  ГўГ»ГўГ®Г¤Г 
 
 private:
-	static const int volume = 100;	//определение переменной значения
-	int degree;		//определение переменной степени
+	static const int volume = 100;	//Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г®Г© Г§Г­Г Г·ГҐГ­ГЁГї
+	int degree;		//Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г®Г© Г±ГІГҐГЇГҐГ­ГЁ
 	int* num;
 
 public:
-	Poly();		//конструкторы
+	Poly();		//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°Г»
 	Poly(int *, const int);
 	Poly(Poly &);
-	Poly &operator+(const Poly &);	//перегрузка оператора сложения
-	Poly &operator-(const Poly &);	//перегрузка оператора вычитания
+	Poly &operator+(const Poly &);	//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  Г±Г«Г®Г¦ГҐГ­ГЁГї
+	Poly &operator-(const Poly &);	//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  ГўГ»Г·ГЁГІГ Г­ГЁГї
 
-	bool operator>(const Poly &) const; //перегрузка оператора сравнения
+	bool operator>(const Poly &) const; //ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  Г±Г°Г ГўГ­ГҐГ­ГЁГї
 
-	double Solve(double) const;		//функция решения многочлена
-	double Integrate(double, double) const;		//функция интеграции
-	void Derivate();	//функция нахождения производной
+	double Solve(double) const;		//ГґГіГ­ГЄГ¶ГЁГї Г°ГҐГёГҐГ­ГЁГї Г¬Г­Г®ГЈГ®Г·Г«ГҐГ­Г 
+	double Integrate(double, double) const;		//ГґГіГ­ГЄГ¶ГЁГї ГЁГ­ГІГҐГЈГ°Г Г¶ГЁГЁ
+	void Derivate();	//ГґГіГ­ГЄГ¶ГЁГї Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГї ГЇГ°Г®ГЁГ§ГўГ®Г¤Г­Г®Г©
 };
