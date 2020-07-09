@@ -3,9 +3,10 @@
 #include <locale.h>
 using namespace std;
 
+setlocale(LC_ALL, "rus");
+
 class Poly
 {
-	setlocale(LC_ALL, "rus");
 	friend ostream &operator<<(ostream &, const Poly &);	//ïåðåãðóçêà îïåðàòîðà âûâîäà
 
 private:
