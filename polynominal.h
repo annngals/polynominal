@@ -7,23 +7,23 @@ class Poly
 {
 	setlocale(LC_ALL, "rus");
 	
-	friend ostream &operator<<(ostream &, const Poly &);	//ïåðåãðóçêà îïåðàòîðà âûâîäà
+	friend ostream &operator<<(ostream &, const Poly &);	//peregruzka operatora vivoda
 
 private:
-	static const int volume = 100;	//îïðåäåëåíèå ïåðåìåííîé çíà÷åíèÿ
-	int degree;		//îïðåäåëåíèå ïåðåìåííîé ñòåïåíè
+	static const int volume = 100;	//opredelenie peremennoi znacheniya
+	int degree;		//opredelenie peremennoi stepeni
 	int* num;
 
 public:
-	Poly();		//êîíñòðóêòîðû
+	Poly();		//konstructori
 	Poly(int *, const int);
 	Poly(Poly &);
-	Poly &operator+(const Poly &);	//ïåðåãðóçêà îïåðàòîðà ñëîæåíèÿ
-	Poly &operator-(const Poly &);	//ïåðåãðóçêà îïåðàòîðà âû÷èòàíèÿ
+	Poly &operator+(const Poly &);	//peregruzka operatora slozheniya
+	Poly &operator-(const Poly &);	//peregruzka operatora vichitaniya
 
-	bool operator>(const Poly &) const; //ïåðåãðóçêà îïåðàòîðà ñðàâíåíèÿ
+	bool operator>(const Poly &) const; //peregruzka operatora sravneniya
 
-	double Solve(double) const;		//ôóíêöèÿ ðåøåíèÿ ìíîãî÷ëåíà
-	double Integrate(double, double) const;		//ôóíêöèÿ èíòåãðàöèè
-	void Derivate();	//ôóíêöèÿ íàõîæäåíèÿ ïðîèçâîäíîé
+	double Solve(double) const;		//funktsiya resheniya mnogochlena
+	double Integrate(double, double) const;		//funktsiya integratsii
+	void Derivate();	//funktsiya nahozhdeniya proizvodnoi
 };
