@@ -12,7 +12,6 @@ private:
 	static const int volume = 100;	//opredelenie peremennoi znacheniya
 	int degree;		//opredelenie peremennoi stepeni
 	int* num;
-	double solve;
 
 public:
 	Poly();		//konstructori
@@ -23,8 +22,8 @@ public:
 
 	bool operator>(const Poly &) const; //peregruzka operatora sravneniya
 
-	double Solve(double);		//funktsiya resheniya mnogochlena
-	double Check(double, double) const;		//funktsiya proverki reseniya na intervale
+	double Solve(double) const;		//funktsiya resheniya mnogochlena
+	double Check(double, double);		//funktsiya proverki reseniya na intervale
 	double Integrate(double, double) const;		//funktsiya integratsii
 	void Derivate();	//funktsiya nahozhdeniya proizvodnoi
 };
