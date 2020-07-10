@@ -92,15 +92,26 @@ double Poly::Solve(double x)	//решение по заданному аргум
 	return d;
 }
 
-double Poly::Check(double a, double b) const	//проверка решения на интервале
+double Poly::Check(double a, double b)	//проверка решения на интервале
 {
-	if ((solve > a) && (solve < b)) {
-		cout << "The root is lying on a segment from " << a << " to " << b << endl;
+	int p = 0;
+	for (double j = a; j <= b; j+=0.001)
+	{
+		for (int i = 0; i < degree; i++)
+		{
+			p += (double)num[i] * pow((double)j, i);
+		}
+		if (p == 0) {
+			break;
+		}
+	}
+	if (p == 0) {
+		cout << "Interval check: yes" << endl;
 	}
 	else {
-		cout << "The root is not lying on a segment from " << a << " to " << b << endl;
+		cout << "Interval check: no" << endl;
 	}
-	return solve;
+	return p;
 }
 
 double Poly::Integrate(double a, double b) const	//интегрирование
