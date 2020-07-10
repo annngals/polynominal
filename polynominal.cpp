@@ -99,7 +99,7 @@ double Poly::Check(double a, double b)	//проверка решения на и
 	{
 		for (int i = 0; i < degree; i++)
 		{
-			p += (double)num[i] * pow((double)j, i);
+			p += (double)num[i] * pow(j, i);
 		}
 		if (p == 0) {
 			break;
