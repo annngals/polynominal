@@ -81,14 +81,26 @@ Poly &Poly::operator-(const Poly &P)	//оператор вычитания
 	return *this;
 }
 
-double Poly::Solve(double x) const	//решение по заданному аргументу
+double Poly::Solve(double x)	//решение по заданному аргументу
 {
 	double d = 0;
 	for (int i = 0; i < degree; i++)
 	{
 		d += num[i] * pow(x, i);
 	}
+	solve = d;
 	return d;
+}
+
+double Poly::Check(double a, double b) const	//проверка решения на интервале
+{
+	if ((solve > a) && (solve < b)) {
+		cout << "The root is lying on a segment from " << a << " to " << b << endl;
+	}
+	else {
+		cout << "The root is not lying on a segment from " << a << " to " << b << endl;
+	}
+	return solve;
 }
 
 double Poly::Integrate(double a, double b) const	//интегрирование
